@@ -1,20 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { onAuthStateChanged } from "firebase/auth";
-import { firebaseAuth } from "../utils/firebase-config";
 import video from "../assets/video.mp4";
 
 export default React.memo(function Card({ index, movieData, isLiked = false }) {
   const navigate = useNavigate();
   const [isHovered, setIsHovered] = useState(false);
-  const [email, setEmail] = useState(undefined);
-
-  onAuthStateChanged(firebaseAuth, (currentUser) => {
-    if (currentUser) {
-      setEmail(currentUser.email);
-    } else navigate("/login");
-  });
 
   return (
     <Container
