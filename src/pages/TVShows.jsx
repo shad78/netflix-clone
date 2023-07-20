@@ -13,8 +13,6 @@ function TVShows() {
   const movies = useSelector((state) => state.netflix.movies);
   const genres = useSelector((state) => state.netflix.genres);
   const genresLoaded = useSelector((state) => state.netflix.genresLoaded);
-
-  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   useEffect(() => {
